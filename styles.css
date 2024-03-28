@@ -55,7 +55,8 @@ header a {
 }
 
 span.calendar-icon {
-  margin: 1em;
+  margin: 1rem;
+  padding: calc(1.5rem + 5px); /* align with calendar right border*/
   font-size: 35;
   color:#dfdfdf;
 }
@@ -80,7 +81,7 @@ main {
 }
 
 main b {
-  color: 2a80d5;
+  color: #2a80d5;
 }
 
 main p {
@@ -121,8 +122,8 @@ main div {
   color: #FFF; /* Contrast color for headers */
   font-weight: 500;
   letter-spacing: 0.1em;
-  width: 6ch;
-  height: 6ch;
+  width: min(7vh, 6ch);
+  height: min(7vh, 6ch);
   font-variant: small-caps;
   display: flex; /* Make the div a flex container */
   align-items: center; /* Center-align vertically */
@@ -145,8 +146,8 @@ main div {
 .date-grid button {
   position: relative;
   border: 0;
-  width: 6ch;
-  height: 6ch;
+  width: min(7vh, 6ch);
+  height: min(7vh, 6ch);
   background-color: #252525;
   color: #efefef; 
   border-radius: 5px;
