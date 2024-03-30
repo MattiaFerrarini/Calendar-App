@@ -17,6 +17,7 @@ header {
   display: flex;
   margin-top: 2em;
   width: 100%;
+  font-size: 125%;
   max-width: 1200px; /* Adjust based on your preference */
   color: #fff;
   justify-content: space-between; /* Distribute space between items */
@@ -33,10 +34,10 @@ h1, h2, h3 {
 
 .content-wrapper {
   display: flex;
-  flex-direction: column; /* Stack on mobile */
+  flex-direction: column;
   width: 100%;
-  max-width: 1200px; /* Adjust based on your preference */
-  gap: 10px;
+  max-width: 1200px; 
+  border-radius: 8px;
 }
 
 .calendar {
@@ -47,7 +48,6 @@ h1, h2, h3 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  max-height: 45vh;
 }
 
 header a {
@@ -70,6 +70,7 @@ span.calendar-icon:active {
 
 main {
   flex: 2;
+  font-size: 1em;
   margin: 1em;
   padding: 1.5em;
   background-color: #101010;
@@ -92,23 +93,10 @@ main div {
   font-size: 125%;
 }
 
-@media (min-width: 768px) {
-
-  .content-wrapper {
-    display: flex;
-    flex-direction: row; /* Side by side on desktop */
-  }
-  main {
-    width: calc(100% - 4em); /* Adjust width to account for margins */
-    margin: 1em; /* Ensure this matches the header margin */
-    padding: 1.5em; /* Matched in the header for alignment */
-  }
-}
-
 .day-of-week,
 .date-grid {
   display: grid;
-  grid-template-rows: repeat(7, minmax(min-content, max-content));
+  grid-template-rows: repeat(7, 1fr);
   grid-auto-flow: column;
   gap: 5px;
 }
@@ -118,12 +106,9 @@ main div {
 }
   
 .day-of-week > * {
-  font-size: 0.85em;
   color: #FFF; /* Contrast color for headers */
   font-weight: 500;
   letter-spacing: 0.1em;
-  width: min(7vh, 6ch);
-  height: min(7vh, 6ch);
   font-variant: small-caps;
   display: flex; /* Make the div a flex container */
   align-items: center; /* Center-align vertically */
@@ -134,7 +119,7 @@ main div {
   outline: none;
   color: #2a80d5; 
 }
-  
+
 .date-grid {
   margin: 0.5em;
 }
@@ -146,12 +131,17 @@ main div {
 .date-grid button {
   position: relative;
   border: 0;
-  width: min(7vh, 6ch);
-  height: min(7vh, 6ch);
   background-color: #252525;
   color: #efefef; 
   border-radius: 5px;
   box-shadow: 1px 1px 2px #000000;
+}
+
+.date-grid button, 
+.day-of-week > * {
+  font-size: min(3vw, 3vh);
+  width: min(10vw, 10vh);
+  height: min(10vw, 10vh);
 }
   
 .date-grid button:hover,
@@ -167,15 +157,22 @@ main div {
   color: #FFFFFF;
 }
 
-@media (max-width: 400px){
-  .date-grid button {
-    width: 4ch;
-    height: 4ch;
+
+@media (min-width: 1000px) {
+  .content-wrapper {
+      display: flex;
+      flex-direction: row;
+  }
+  main {
+      margin: 1em;
+      padding: 1.5em;
   }
 
-  .day-of-week > * {
-    width: 4ch;
-    height: 4ch;
+  .day-of-week > *,
+  .date-grid button {
+    font-size: min(2vw, 2ch);
+    width: min(7vw, 6vh);
+    height: min(7vw, 6vh);
   }
 }
 
