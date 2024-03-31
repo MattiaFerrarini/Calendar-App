@@ -1,4 +1,4 @@
-# Calendar App
+# Calendar UI
 UI of a calendar app, developed as an excercise for the Web Technologies course at the University of Bologna.
 
 Try it here: https://mattiaferrarini.github.io/Calendar-App/.
